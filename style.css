@@ -4,8 +4,16 @@
     padding: 0;
     box-sizing: border-box;
 }
-button {
+input, textarea, button {
     font: inherit;
+}
+textarea {
+    resize: none;
+}
+input {
+    min-width: min-content;
+}
+button {
     border: none;
     cursor: pointer;
 }
@@ -36,5 +44,13 @@ dialog {
         display: flex;
         flex-direction: column;
         gap: 6px;
+        [contenteditable] {
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            padding: 2px;
+            background-color: #f7f7f7;
+            display: inline-block;
+            min-width: 1ch;
+        }
     }
 }

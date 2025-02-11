@@ -26,9 +26,9 @@ myLibrary.forEach(book => {
 
 const bookModal = document.querySelector("#book-modal");
 const openBookModal = (book) => {
-    bookModal.querySelector(".title").textContent = book.title;
-    bookModal.querySelector(".author").textContent = `by ${book.author}`;
-    bookModal.querySelector(".page-count").textContent = `${book.pageCount} pages`;
+    bookModal.querySelector(".title > [contenteditable]").textContent = book.title;
+    bookModal.querySelector(".author > [contenteditable]").textContent = book.author;
+    bookModal.querySelector(".page-count > [contenteditable]").textContent = book.pageCount;
     bookModal.querySelector(".is-read").textContent = `${book.isRead ? "Already read" : "Not read yet"}`;
     bookModal.showModal();
 }
