@@ -6,6 +6,12 @@
 }
 button {
     font: inherit;
+    border: none;
+    cursor: pointer;
+}
+dialog {
+    border: none;
+    margin: auto; /* centering */
 }
 
 #bookshelf {
@@ -18,7 +24,17 @@ button {
 .book {
     height: 560px;
     writing-mode: vertical-rl;
+    text-align: start;
     padding: 20px 10px;
     font-size: 30px;
     background-color: #eee;
+}
+#book-modal {
+    border-radius: 5px;
+    form {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
 }
