@@ -25,12 +25,18 @@ const drawLibrary = () => {
         bookDiv.textContent = `${book.title} - ${book.author}`;
         bookshelf.appendChild(bookDiv);
     });
+    addBookDiv = document.createElement('button');
+    addBookDiv.classList.add('book', 'add-book');
+    addBookDiv.addEventListener('pointerdown', () => openBookModal(new Book()));
+    bookshelf.appendChild(addBookDiv);
+
 }
 drawLibrary();
 
 
 const bookModal = document.querySelector("#book-modal");
 const openBookModal = (book) => {
+    const isNew = !myLibrary.has(book);
     const titleField = bookModal.querySelector(".title > [contenteditable]");
     const authorField = bookModal.querySelector(".author > [contenteditable]");
     const pageCountField = bookModal.querySelector(".page-count > [contenteditable]");
@@ -43,6 +49,7 @@ const openBookModal = (book) => {
         book.title = titleField.textContent;
         book.author = authorField.textContent;
         book.pageCount = pageCountField.textContent;
+        if (isNew) myLibrary.add(book);
         drawLibrary();
     }
     bookModal.showModal();

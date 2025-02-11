@@ -36,6 +36,12 @@ dialog {
     padding: 20px 10px;
     font-size: 30px;
     background-color: #eee;
+    &.add-book {
+        margin-left: auto;
+        width: 53px;
+        background-color: #eee4;
+        border: 5px dashed #eee;
+    }
 }
 #book-modal {
     border-radius: 5px;
