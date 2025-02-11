@@ -45,11 +45,15 @@ const openBookModal = (book) => {
     authorField.textContent = book.author;
     pageCountField.textContent = book.pageCount;
     isReadField.textContent = `${book.isRead ? "Already read" : "Not read yet"}`;
-    bookModal.querySelector("button").onclick = () => {
+    bookModal.querySelector(".save").onclick = () => {
         book.title = titleField.textContent;
         book.author = authorField.textContent;
         book.pageCount = pageCountField.textContent;
         if (isNew) myLibrary.add(book);
+        drawLibrary();
+    }
+    bookModal.querySelector(".delete").onclick = () => {
+        if (!isNew) myLibrary.delete(book);
         drawLibrary();
     }
     bookModal.showModal();
