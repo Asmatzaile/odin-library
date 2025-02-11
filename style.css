@@ -1,8 +1,24 @@
+/* reset */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-
 button {
     font: inherit;
+}
+
+#bookshelf {
+    min-height: 100dvh;
+    display: flex;
+    align-items: end;
+    gap: 8px;
+    background-color: #ccc;
+}
+.book {
+    height: 560px;
+    writing-mode: vertical-rl;
+    padding: 20px 10px;
+    font-size: 30px;
+    background-color: #eee;
 }

@@ -18,4 +18,12 @@ function addBookToLibrary(title, author, pageCount, isRead) {
 
 addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, false);
 addBookToLibrary("El perquè de tot plegat", "Quim Monzó", 176, true)
-myLibrary.forEach(book => console.log(book.info()))
+
+const bookshelf = document.querySelector("#bookshelf");
+myLibrary.forEach(book => {
+    console.log(book.info())
+    const bookDiv = document.createElement('div');
+    bookDiv.classList.add('book');
+    bookDiv.textContent = `${book.title} - ${book.author}`;
+    bookshelf.appendChild(bookDiv);
+})
