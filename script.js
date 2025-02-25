@@ -1,10 +1,12 @@
 const myLibrary = new Set();
 
-function Book(title, author, pageCount, isRead) {
-    this.title = title;
-    this.author = author;
-    this.pageCount = pageCount;
-    this.isRead = isRead;
+class Book {
+    constructor(title, author, pageCount, isRead) {
+        this.title = title;
+        this.author = author;
+        this.pageCount = pageCount;
+        this.isRead = isRead;
+    }
 }
 
 function addBookToLibrary(title, author, pageCount, isRead) {
